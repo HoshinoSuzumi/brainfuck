@@ -1,12 +1,40 @@
-# @typescript-lib-template
+# @uniiem/brainfuck
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/HoshinoSuzumi/[repo]/ci.yml)
-![NPM Downloads](https://img.shields.io/npm/dm/%40[org]%2F[repo])
-![NPM Version (with dist tag)](https://img.shields.io/npm/v/%40[org]%2F[repo]/latest)
-![npm bundle size](https://img.shields.io/bundlephobia/min/%40[org]%2F[repo])
-![GitHub License](https://img.shields.io/github/license/HoshinoSuzumi/[repo])
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/HoshinoSuzumi/brainfuck/ci.yml)
+![NPM Downloads](https://img.shields.io/npm/dm/%40uniiem%2Fbrainfuck)
+![NPM Version (with dist tag)](https://img.shields.io/npm/v/%40uniiem%2Fbrainfuck/latest)
+![npm bundle size](https://img.shields.io/bundlephobia/min/%40uniiem%2Fbrainfuck)
+![GitHub License](https://img.shields.io/github/license/HoshinoSuzumi/brainfuck)
 
-TypeScript Lib Starter Template
+The reimplementation of BrainfuckJs using TypeScript.
+
+## Installtion
+
+```bash
+npm i @uniiem/brainfuck
+```
+
+## API
+
+```typescript
+declare const setDebug: (value: boolean) => boolean;
+
+declare const execute: (program: string, input?: string) => Promise<unknown>;
+declare const executeCallbackly: (program: string, input?: string, callback?: Callback) => Promise<unknown>;
+
+// Type Definations
+export type Operation = Record<string, () => void>;
+export type Operator = "+" | "-" | ">" | "<" | "[" | "]" | "." | ",";
+export type Callback = (runtime: Runtime) => void;
+export interface Runtime {
+    operator?: Operator | null;
+    memory: Uint8Array;
+    pointer: number;
+    input: string;
+    output_buffer: string;
+    exited: boolean;
+}
+```
 
 ## Sponsor
 

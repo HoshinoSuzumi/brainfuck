@@ -1,9 +1,15 @@
 {
-  "name": "@uniiem/typescript-lib-template",
+  "name": "@uniiem/brainfuck",
   "type": "module",
   "version": "0.0.0",
-  "description": "TypeScript Library Template",
-  "keywords": [],
+  "description": "The reimplementation of BrainfuckJs using TypeScript.",
+  "keywords": [
+    "brainfuck"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HoshinoSuzumi/brainfuck"
+  },
   "author": "HoshinoSuzumi <master@uniiem.com>",
   "license": "MIT",
   "main": "dist/index.umd.cjs",
@@ -20,6 +26,7 @@
     "dist"
   ],
   "scripts": {
+    "preview": "vite build && tsc && vite --port 3001",
     "build": "vite build && tsc",
     "release": "bumpp && npm publish",
     "test": "vitest",
